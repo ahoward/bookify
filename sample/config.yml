@@ -1,0 +1,46 @@
+---
+
+book:
+  title:
+    'foo bar'
+  author:
+    'ara.t.howard'
+  date_range:
+    - 2009-10-22
+    - 2009-11-22
+  bookend:
+    images:
+      - '/full/path/to/image.jpg'
+      - '/full/path/to/image.jpg'
+
+  chapters:
+    title:
+      'bar foo'
+    date_range:
+    - 2009-10-22
+    - 2009-11-22
+    bookend:
+      images:
+      - '/full/path/to/image.jpg'
+      - '/full/path/to/image.jpg'
+    sections:
+    -
+      type:
+        post
+      title:
+        'bar foo'
+      date_range:
+        - 2009-10-22
+        - 2009-11-22
+      content:
+        'blah blah blah'
+    -
+      type:
+        image
+      title:
+        'bar foo'
+      date_range:
+        - 2009-10-22
+        - 2009-11-22
+      content:
+        '/full/path/to/image.jpg'

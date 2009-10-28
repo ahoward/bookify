@@ -1,0 +1,37 @@
+#! /usr/bin/env ruby
+
+Main {
+  argument('config')
+
+  argument('pdf'){
+    optional
+    default 'book.pdf'
+  }
+
+  def run
+    @config = param['config'].value
+    pdf = Bookify(@config)
+
+    @pdf = param['pdf'].value
+    open(@pdf, 'w'){|fd| fd.write(pdf)}
+  end
+}
+
+
+BEGIN {
+  begin
+    require 'rubygems'
+  rescue LoadError
+    nil
+  end
+
+  require 'main'
+
+  begin
+    require 'bookify'
+  rescue LoadError
+    alternate = File.expand_path(File.join(File.dirname(__FILE__), '../lib/bookify.rb'))
+    raise unless test(?e, alternate)
+    require alternate
+  end
+}
