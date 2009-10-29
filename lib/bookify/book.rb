@@ -41,12 +41,33 @@ module Bookify
       @layout_dir = @layout = nil
     end
 
-    def render(hash)
-      viewname, object = hash.to_a.first
-      basename = viewname.to_s
-      basename += '.html.erb' unless(basename.split('.').size > 1)
-      template = Template.read(File.join(@layout_dir, basename))
-      template.expand(object)
+    alias_method 'to_html', 'expand'
+
+    def render(*args)
+      args, options = Bookify.args_for(args)
+
+      args.each do |arg|
+        case arg
+          when Section
+            options[:section] = arg
+        end
+      end
+
+      template = options[:template]
+
+      if options.has_key?(:section)
+        section = options[:section]
+        basename = ['section', section.type].compact.join('-')
+        template ||= basename
+        context = section
+      end
+
+      template = template.to_s
+      template = File.join(@layout_dir, template) unless template[0,1]=='/'
+      template += '.html.erb' unless(template.split('.').size > 1)
+
+      template = Template.read(template)
+      template.expand(context)
     end
 
     def to_pdf(*args, &block)
@@ -81,33 +102,50 @@ module Bookify
         @dates = []
         @sections = []
 
+        @index = Integer(config[:index]) if config.has_key?(:index)
         @title = String(config[:title]) if config.has_key?(:title)
 
-        @index = Integer(config[:index]) if config.has_key?(:index)
-
-        ( config[:dates] || [] ).each do |date|
+        (config[:dates] || []).each do |date|
           @dates.push(Date.parse(date.to_s))
         end
-
-        ( config[:sections] || [] ).each do |section_config|
+        (config[:sections] || []).each do |section_config|
           @sections.push(Section.new(section_config))
         end
       end
+    end
 
-      class Section
-        attr_accessor'config'
+    class Section
+      attr_accessor 'config'
 
-        attr_accessor'title'
-        attr_accessor'dates'
-        attr_accessor'posts'
+      attr_accessor 'index'
+      attr_accessor 'type'
+      attr_accessor 'title'
+      attr_accessor 'dates'
+      attr_accessor 'content'
 
-        def initialize(config = {})
-          #configure(config)
+      def initialize(config = {})
+        configure(config)
+      end
+
+      def configure(config = {})
+        @config = Bookify.config_for(config)
+        @type = nil
+        @title = nil
+        @dates = []
+        @content = nil
+
+        @index = Integer(config[:index]) if config.has_key?(:index)
+        @type = String(config[:type]) if config.has_key?(:type)
+        @title = String(config[:title]) if config.has_key?(:title)
+        @content = String(config[:content]) if config.has_key?(:content)
+
+        (config[:dates] || []).each do |date|
+          @dates.push(Date.parse(date.to_s))
         end
+      end
 
-        def section
-          self
-        end
+      def section
+        self
       end
     end
   end

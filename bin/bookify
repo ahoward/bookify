@@ -3,17 +3,46 @@
 Main {
   argument('config')
 
-  argument('pdf'){
-    optional
-    default 'book.pdf'
+  option('--output', '-o'){
+    argument :required
+  }
+
+  option('--format', '-f'){
+    description 'pdf|html'
+    argument :required
+    default 'pdf'
   }
 
   def run
     @config = param['config'].value
-    pdf = Bookify(@config)
+    @output = param['output'].value
+    @format = param['format'].value
 
-    @pdf = param['pdf'].value
-    open(@pdf, 'w'){|fd| fd.write(pdf)}
+    case @format
+      when /pdf/
+        msg = :to_pdf
+        output = @output ? @output : 'book.pdf'
+      when /html/
+        msg = :to_html
+        output = @output ? @output : 'book.html'
+    end
+
+    msg = "to_#{ @format }"
+    out = @output ? @output : "book.#{ @format }"
+
+    book = Bookify::Book.new(@config)
+    fmt = book.send(msg)
+
+    open(out){|fd| fd.write(fmt)}
+  end
+
+  def open(io)
+    case io
+      when '-'
+        yield(STDOUT)
+      else
+        Kernel.open(io, 'w'){|fd| yield(fd)}
+    end
   end
 }
 

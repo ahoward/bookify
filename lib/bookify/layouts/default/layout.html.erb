@@ -6,7 +6,7 @@
   <body>
 
     <% chapters.each do |chapter| %>
-      <div class="chapter" id="chapter-#{ chapter.index }">
+      <div class="chapter" id="chapter-<%= chapter.index %>">
 
         <% chapter.sections.each do |section| %>
           <%= render :section => section %>

@@ -9,7 +9,7 @@ module Bookify
     def Template.read(pathname)
       template = Template.for(IO.read(pathname.to_s))
     ensure
-      template.path = pathname.to_s
+      template.path = pathname.to_s if template
     end
 
     def initialize(*args, &block)
