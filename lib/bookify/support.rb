@@ -147,4 +147,8 @@ module Bookify
     options = Bookify.hash_for(args.last.is_a?(Hash) ? args.pop : {})
     [args, options]
   end
+
+  def options_for(args)
+    hash_for(args.last.is_a?(Hash) ? args.pop : {})
+  end
 end
