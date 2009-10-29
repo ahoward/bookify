@@ -35,14 +35,17 @@ module Bookify
     end
   end
 
-  def config_for(arg)
-    case arg
+  def config_for(config)
+    case config
+      when NilClass
+      raise
+        Bookify.normalized_hash()
       when Hash
-        Bookify.normalized_hash(arg)
+        Bookify.normalized_hash(config)
       when IO, StringIO
-        Bookify.normalized_hash(YAML.load(arg.read))
+        Bookify.normalized_hash(YAML.load(config.read))
       else
-        Bookify.normalized_hash(YAML.load(IO.read(arg.to_s)))
+        Bookify.normalized_hash(YAML.load(IO.read(config.to_s)))
     end
   end
 

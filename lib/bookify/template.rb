@@ -1,11 +1,15 @@
 module Bookify
   class Template < ERB
+    attr_accessor 'path'
+
     def Template.for(*args, &block)
       new(*args, &block)
     end
 
     def Template.read(pathname)
-      Template.for(IO.read(pathname.to_s))
+      template = Template.for(IO.read(pathname.to_s))
+    ensure
+      template.path = pathname.to_s
     end
 
     def initialize(*args, &block)

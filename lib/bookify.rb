@@ -3,6 +3,7 @@ require 'tmpdir'
 require 'fileutils'
 require 'erb'
 require 'cgi'
+require 'date'
 
 begin
   require 'rubygems'

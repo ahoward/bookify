@@ -5,42 +5,72 @@ book:
     'foo bar'
   author:
     'ara.t.howard'
-  date_range:
-    - 2009-10-22
-    - 2009-11-22
-  bookend:
-    images:
-      - '/full/path/to/image.jpg'
-      - '/full/path/to/image.jpg'
+  start_date:
+    2009-10-22
+  end_date:
+    2009-11-22
+  bookend_images:
+    front: '/full/path/to/image.jpg'
+    back: '/full/path/to/image.jpg'
 
   chapters:
+  -
     title:
-      'bar foo'
-    date_range:
-    - 2009-10-22
-    - 2009-11-22
-    bookend:
-      images:
-      - '/full/path/to/image.jpg'
-      - '/full/path/to/image.jpg'
+      'Chapter One'
+    dates:
+      start: 2009-10-22
+      end: 2009-11-22
+
     sections:
     -
-      type:
-        post
-      title:
-        'bar foo'
-      date_range:
-        - 2009-10-22
-        - 2009-11-22
+      type: post
+      title: 'bar foo'
+      dates:
+        start: 2009-10-22
+        end: 2009-11-22
       content:
         'blah blah blah'
     -
       type:
         image
-      title:
-        'bar foo'
-      date_range:
-        - 2009-10-22
-        - 2009-11-22
+      content: |
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+        eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,
+        wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum
+        rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in
+        turpis pulvinar facilisis. Ut felis.
+
+
+  -
+    title:
+      'Chapter Two'
+    dates:
+      start: 2009-10-22
+      end: 2009-11-22
+
+    sections:
+    -
+      type: post
+      title: 'bar foo'
+      dates:
+        start: 2009-10-22
+        end: 2009-11-22
+      content: |
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+        egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+        eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,
+        wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum
+        rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in
+        turpis pulvinar facilisis. Ut felis.
+    -
+      type:
+        image
       content:
         '/full/path/to/image.jpg'
