@@ -28,17 +28,17 @@ module Bookify
       options[:layout] ||= :default
       layout = options[:layout].to_s
 
-      @layout_dir = layout
-      unless @layout_dir[0,1] == '/'
-        @layout_dir = Bookify.libdir('layouts', @layout_dir)
+      @layout = layout
+      unless @layout[0,1] == '/'
+        @layout = Bookify.libdir('layouts', @layout)
       end
-      @layout = "#{ @layout_dir }/layout.html.erb"
+      template = "#{ @layout }/book.html.erb"
 
-      template = Template.read(@layout)
-      template.expand(book)
+      @template = Template.read(template)
+      @template.expand(book)
 
     ensure
-      @layout_dir = @layout = nil
+      @layout = nil
     end
 
     alias_method 'to_html', 'expand'
@@ -63,7 +63,7 @@ module Bookify
       end
 
       template = template.to_s
-      template = File.join(@layout_dir, template) unless template[0,1]=='/'
+      template = File.join(@layout, template) unless template[0,1]=='/'
       template += '.html.erb' unless(template.split('.').size > 1)
 
       template = Template.read(template)
@@ -86,7 +86,6 @@ module Bookify
       status, stdout, stderr = systemu(command, :stdin => blob)
 
       blob.number_of_pages = Bookify.number_of_pages(:pdf => blob)
-
       blob
     end
     
@@ -119,8 +118,10 @@ module Bookify
         (config[:dates] || []).each do |date|
           @dates.push(Date.parse(date.to_s))
         end
-        (config[:sections] || []).each do |section_config|
-          @sections.push(Section.new(section_config))
+        (config[:sections] || []).each_with_index do |section_config, index|
+          section = Section.new(section_config)
+          section.index = index
+          @sections.push(section)
         end
       end
     end
