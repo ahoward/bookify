@@ -6,6 +6,7 @@ module Bookify
     attr_accessor 'content_type'
     alias_method 'type', 'content_type'
     alias_method 'type=', 'content_type='
+    attr_accessor 'number_of_pages'
 
     def Blob.for(*args)
       args, options = Bookify.args_for(args)
@@ -45,17 +46,22 @@ module Bookify
     def to_s() self end
     alias_method 'data', 'to_s'
     alias_method 'contents', 'to_s'
+    alias_method 'blob', 'to_s'
 
     def content_type_for(pathname)
       MIME::Types.type_for(pathname.to_s).first.to_s
     end
 
     def inspect
-      "#{ self.class.name }(pathname=#{ pathname.inspect }, contents=#{ ellipsis.inspect })"
+      "#{ self.class.name }(pathname=#{ pathname.inspect }, number_of_pages=#{ number_of_pages }, contents=#{ ellipsis.inspect })"
     end
 
     def ellipsis
-      size>42 ? self[0,42]+'...' : self
+      if size > 42
+        self[0, 42] + '...'
+      else
+        "#{ self }"
+      end
     end
   end
 end

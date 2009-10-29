@@ -73,12 +73,23 @@ module Bookify
     def to_pdf(*args, &block)
       args, options = Bookify.args_for(args)
       options[:filename] ||= 'book.pdf'
+
       html = expand(*[args, options])
+
       command = "#{ Bookify.prince } - -o -"
       status, stdout, stderr = systemu(command, :stdin => html)
       raise "command(#{ command.inspect }) failed with status(#{ status.inspect })" unless status==0
-      Blob.for(stdout, options)
+
+      blob = Blob.for(stdout, options)
+
+      command = "#{ Bookify.pdftk } - dump_data"
+      status, stdout, stderr = systemu(command, :stdin => blob)
+
+      blob.number_of_pages = Bookify.number_of_pages(:pdf => blob)
+
+      blob
     end
+    
 
     def book
       self

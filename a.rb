@@ -1,21 +1,7 @@
 require 'bookify'
 
-template =
-  Bookify::Template.xml(
-    <<-__
+file = ARGV.shift||'book.pdf'
 
-      <size>
-        <%= size %>
-      </size>
 
-      <elements>
-        <% each do |element| %>
-        <element> <%= element %> </element>
-        <% end %>
-      </elements>
-
-    __
-  )
-
-puts template.expand(array = [])
-puts template.expand(array = [42])
+puts Bookify.number_of_pages(:file => file)
+puts Bookify.number_of_pages(:pdf => IO.read(file))

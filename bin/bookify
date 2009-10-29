@@ -32,7 +32,6 @@ Main {
 
     book = Bookify::Book.new(@config)
     fmt = book.send(msg)
-
     open(out){|fd| fd.write(fmt)}
   end
 
