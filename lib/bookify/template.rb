@@ -24,7 +24,6 @@ module Bookify
       context ||= block.binding if block
       context ||= @context
       context ||= Object.new
-      #raise ArgumentError, 'no context' unless context
       context = context.instance_eval('binding') unless context.respond_to?('binding')
       block.call(self) if block
       result(context)

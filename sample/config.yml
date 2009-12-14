@@ -1,76 +1,49 @@
----
-
-book:
-  title:
-    'foo bar'
-  author:
-    'ara.t.howard'
-  start_date:
-    2009-10-22
-  end_date:
-    2009-11-22
-  bookend_images:
-    front: '/full/path/to/image.jpg'
-    back: '/full/path/to/image.jpg'
-
-  chapters:
-  -
-    title:
-      'Chapter One'
-    dates:
-      start: 2009-10-22
-      end: 2009-11-22
-
-    sections:
-    -
-      type: post
-      title: 'bar foo'
-      dates:
-        start: 2009-10-22
-        end: 2009-11-22
-      content:
-        'blah blah blah'
-    -
-      type:
-        image
-      content: |
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-        eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,
-        wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum
-        rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in
-        turpis pulvinar facilisis. Ut felis.
-
-
-  -
-    title:
-      'Chapter Two'
-    dates:
-      start: 2009-10-22
-      end: 2009-11-22
-
-    sections:
-    -
-      type: post
-      title: 'bar foo'
-      dates:
-        start: 2009-10-22
-        end: 2009-11-22
-      content: |
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
-        ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
-        egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-        eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet,
-        wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum
-        rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in
-        turpis pulvinar facilisis. Ut felis.
-    -
-      type:
-        image
-      content:
-        '/full/path/to/image.jpg'
+--- 
+book: 
+  chapters: 
+  - title: Velit pariatur nesciunt perferendis qui molestiae laboriosam.
+    start_date: 1981-09-14
+    end_date: 1981-09-15
+    images: 
+    - http://farm4.static.flickr.com/3419/3803082628_e0c599171d_b.jpg
+    - http://farm3.static.flickr.com/2562/3965282136_62050d2198_b.jpg
+    sections: 
+    - type: image
+      images: 
+      - http://farm3.static.flickr.com/2589/3682553079_654201b0d6_o.jpg
+    - type: post
+      title: Architecto est consequatur qui neque excepturi quo.
+      date: 1970-01-02
+      content: |-
+        Laudantium ex facere quisquam aliquid veniam cumque. Consectetur unde sunt non magnam ipsam labore sit. Et impedit exercitationem repellendus laborum odio aut. Eos expedita quia minus. Mollitia corporis recusandae et ut. Pariatur nemo sed voluptatibus ut voluptates. In itaque hic vel. Nam ducimus est praesentium autem. Consequatur cum nesciunt sed ducimus dolor sunt. Animi quia delectus est esse beatae. Placeat ea aut dolores. Velit ex dignissimos cumque ad distinctio recusandae. Beatae quod est maiores illum. Non sit amet minima dolorem animi maxime odio. Natus voluptatem voluptas autem accusamus error. Tempora earum blanditiis placeat ad omnis harum quam fuga. Nisi non excepturi consequatur velit quis quas officia. Consequatur fuga molestiae a porro ut laborum ut. Et vel veritatis cum quo quam molestiae. Et est officia soluta consequatur necessitatibus id ullam. Vel unde soluta quia architecto. Excepturi pariatur temporibus modi voluptas dignissimos quos est quam. Impedit at ipsum enim maxime. Eligendi saepe nobis voluptatem enim. Neque dolores ea et voluptatem odio. Hic et aut nesciunt. Reiciendis voluptatem eos nemo eos et. Qui culpa aperiam et illum. Nemo nihil optio dolor distinctio. Ullam illo blanditiis amet sunt. Ea rerum velit odio molestiae veritatis. Unde et nemo eos aut aperiam voluptatem impedit. Et autem et blanditiis dolores. Pariatur laudantium molestiae quisquam expedita. Possimus ratione repellat corporis quasi nemo molestiae animi occaecati. Nisi dignissimos at et voluptate iusto et. Nesciunt qui quisquam et. Et est qui reprehenderit perspiciatis impedit id ea. Qui explicabo distinctio omnis et error.
+        
+        Porro quibusdam dolore quo eaque voluptatem saepe. Voluptatem quis repudiandae iusto eligendi nostrum. Omnis magnam quia dolor quae. Officia et excepturi architecto. Sit enim est quis. Et iusto dolorum maxime ut et. Ipsum sed qui ad architecto. Quasi voluptatem saepe enim sed. Magnam occaecati voluptas vel voluptas repudiandae officia odit et. Rerum ipsam ut unde aut. Animi placeat consequatur ut. Autem sunt et saepe perspiciatis. Exercitationem quia atque et. Repellat distinctio quia et quibusdam. Tenetur nobis enim nisi at recusandae qui vel. Ad molestiae quia similique voluptate. Minima cum sed accusantium. Qui et eum distinctio amet tempore quae. Odit commodi et explicabo inventore fuga. Qui pariatur aut incidunt aut. In laboriosam eius vel ut. Praesentium optio incidunt facere. Assumenda quis dolorem et aut vero fuga quaerat nulla. Delectus vero recusandae hic.
+        
+        Dolores modi et magni vitae culpa. Qui dolores reiciendis repellat laboriosam quo autem. Molestias neque sed quaerat voluptatibus voluptate dolores culpa. Exercitationem doloribus qui molestiae dolores pariatur quas dignissimos iure. Dolorum quaerat occaecati enim velit tempore voluptatem consequatur magnam. Commodi molestiae dicta aliquam fuga harum a omnis. Occaecati cupiditate non nihil suscipit dignissimos alias aspernatur eligendi. Atque harum et placeat vel odio eum beatae sit.
+        
+        Eos ipsam et consequatur qui veritatis corporis possimus debitis. Est molestiae rem est id dolor ad doloribus sed. Commodi nihil cupiditate delectus nostrum. Ea et in placeat non minus expedita animi. Qui qui ut dolore est magnam molestiae officia. Accusamus doloremque tempore aut unde. Molestiae ut doloremque aliquid facere. Reiciendis a quibusdam harum quos possimus. Nemo tenetur similique ut necessitatibus illum explicabo dolor. Dolorum doloremque a reprehenderit ex sit. Et qui ex aut id qui eos beatae vitae. Voluptatem aspernatur quasi repellendus in dolorum iure qui qui. Sed similique voluptates reiciendis consequatur. Voluptates est quis deserunt tenetur sequi provident. Repudiandae deleniti autem aut. Et illum sint consequatur aperiam quisquam. Saepe aut ut qui quas nobis aut. Impedit a accusantium repellat. Ut occaecati aperiam explicabo ullam. Occaecati eum quod omnis doloribus est cum. Sint dolor consectetur corrupti ab.
+        
+        Laboriosam ullam quibusdam ut culpa aut non numquam. Expedita est atque sed. Quasi consectetur ipsa aut eos. Dignissimos mollitia qui ut rerum quasi et. Ea excepturi sunt consequuntur recusandae dolores. Aut sed qui commodi dignissimos rerum maxime sed non. Voluptas illo esse omnis praesentium. Ut placeat quidem a amet. Dolorum eos illum laboriosam. Fuga voluptates dolorem ex itaque expedita. Ducimus molestias eos nulla facilis pariatur voluptatem. Repudiandae fugiat porro iusto rerum sit. Aut maiores ut soluta voluptas. Necessitatibus nisi alias consectetur magnam. Doloribus perspiciatis ut minima cupiditate quasi eum qui. Velit enim itaque rerum deserunt. Quaerat debitis voluptatem tenetur est voluptate iste perspiciatis. Neque omnis nulla rerum.
+        
+        Qui est totam sed. In voluptatum id cupiditate. Aut sit nostrum ea dolorum est sunt qui amet. Minima perspiciatis sed molestiae voluptatem similique vel aut magnam. Sit dolor architecto rerum. Sunt omnis ex ut qui at sint. Tenetur illo rerum id ut labore ullam dolor dolores. Iusto pariatur quia vel rerum.
+        
+        Enim animi laboriosam quia enim. Facere consequatur vero enim nulla voluptas at. Rerum veniam nam molestias et culpa. Quo adipisci id et eos sint enim. Numquam ad quos voluptatem odio voluptatem. Nobis vel odio molestias cumque facilis. Soluta unde quibusdam mollitia voluptas. Eum enim corporis ut ab. Sit rem omnis repellendus error corrupti. Id dolores praesentium possimus voluptas sed placeat quos. Et ut eligendi atque dolores. Omnis voluptatem alias voluptates et molestiae atque fuga. Quibusdam quaerat quod delectus ut. Exercitationem reprehenderit consequatur placeat sunt quaerat reiciendis neque quia. Voluptatum esse et omnis animi porro natus exercitationem. Provident explicabo temporibus similique necessitatibus ab totam officia. Quos cumque aut error. Error voluptatum est porro placeat nemo vel qui eos. Sunt eius architecto sapiente ut aut possimus et non.
+        
+        Ea et in sit numquam nesciunt laboriosam ab. Error sit velit cum. Ex eos sit fugit ab. Voluptas tempora magnam quos excepturi aliquam. Voluptatem aut sint fugiat qui fugit. Ipsa rerum qui iste. A commodi fugiat sapiente cupiditate consequatur. Reprehenderit molestiae quis cupiditate inventore. Libero et tempora ea. Provident sapiente ipsum et incidunt quia corporis. Odio quia iste aperiam exercitationem pariatur soluta atque et. Ipsam maxime aspernatur excepturi consequatur voluptatem ab nemo tempore. Sapiente commodi similique inventore nostrum rerum neque numquam suscipit. At nihil enim eligendi libero in. Exercitationem rerum neque unde. Sunt qui dolor est possimus et. Enim quis officiis autem aut est. Quidem eum neque quasi temporibus quis repellat. Vel labore impedit commodi inventore. Asperiores repudiandae quia inventore ipsam. Omnis autem beatae quam assumenda aperiam et. Occaecati porro ea maxime aut. Dicta excepturi sed ducimus. Accusantium excepturi et saepe. Rerum aspernatur ea mollitia earum ut qui. Ad eaque quisquam sapiente. Et doloribus ducimus modi. Corrupti eius ut unde sit aut sapiente nulla ut. Consectetur eos et accusamus possimus. Perferendis doloribus aspernatur nemo aliquid omnis.
+        
+        Quod et qui aut nesciunt sit culpa. Amet molestias accusamus sint deleniti veritatis blanditiis architecto. Voluptas delectus quia quod suscipit. Ut voluptas molestiae exercitationem laborum aut hic sunt. Et consequatur architecto qui. Dolorem velit sint ipsum. Modi voluptatibus explicabo nostrum et quae tempora optio ducimus. Similique dicta et non et eaque magni vitae repellendus. Facere deleniti doloribus cumque tempora distinctio aliquam. Exercitationem quo est suscipit nulla ipsum illo. Molestiae non vel provident qui. Necessitatibus non qui illum. Veniam similique tempora ipsam. Quo aspernatur doloremque nisi nobis quas corrupti magnam. Impedit quia sit molestiae velit vitae. Consequuntur molestiae qui eveniet. Blanditiis ut in tempora impedit ducimus reiciendis hic. Rerum necessitatibus illo placeat consequatur magni quibusdam.
+        
+        Qui architecto rerum repudiandae. Enim voluptatem tempore illo et. Dolores enim distinctio minima nisi ut. Praesentium nulla tenetur sequi ut officia. Magnam architecto dignissimos dolores accusamus voluptas. Minima tempora dolorem inventore quisquam. Et distinctio officia ex numquam enim iusto unde. Dolor et ex assumenda. Eveniet ut maiores fugiat. Hic beatae quisquam earum adipisci. Laborum atque iure ut et vel ut laudantium fugiat. Qui a sunt eos dolore dignissimos optio qui eveniet. Nulla dolorum ea sit placeat quas corporis. Voluptatem culpa provident neque eveniet voluptatem inventore iure possimus. Commodi ea dignissimos necessitatibus nesciunt velit cumque eligendi quibusdam. Saepe ea ratione doloremque optio itaque totam reprehenderit. Accusantium est quo dolorem. Voluptatem laboriosam laborum nihil hic dolorem. Blanditiis excepturi culpa ut rerum qui iste. Dolor pariatur possimus et atque qui ut. Sit natus consectetur illo. Quo velit aut omnis. Impedit est possimus similique.
+        
+        Cupiditate iste ut eaque provident. Minus autem enim eius distinctio odio. Sint in ea dolor non culpa non ducimus. Fuga delectus voluptas sed ipsa minus blanditiis adipisci aut. Quos et corrupti accusamus maiores laboriosam labore. Veniam voluptatem et nulla recusandae quam. Itaque qui alias eaque id veritatis aspernatur aliquam. Officia sit aut ratione aut sunt autem. Odio id dolores officiis et porro. Dolorem est sed labore accusamus nihil. Veritatis incidunt voluptatem laudantium possimus nemo. Dolorum tenetur ratione quaerat. Reprehenderit quis error enim ut odit. Voluptate sunt dolores quis quos sint sapiente voluptatem. Rerum est culpa dolor excepturi beatae.
+  - title: Libero et nesciunt voluptatum.
+    start_date: 1981-04-12
+    end_date: 1981-04-15
+    images: 
+    - http://farm3.static.flickr.com/2588/3665901078_e841ba606c_b.jpg
+    sections: 
+    - type: image-3
+      images: 
+      - http://farm3.static.flickr.com/2590/3816102235_0408348052_b.jpg
+      - http://farm3.static.flickr.com/2436/3650991546_661bb24f12_o.jpg
+      - http://farm3.static.flickr.com/2635/3965683982_1e26d543ce_b.jpg

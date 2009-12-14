@@ -148,7 +148,9 @@ module Bookify
     [args, options]
   end
 
-  def options_for(args)
+  def options_for(*args)
+    args = args.first if(args.size==1 and args.first.is_a?(Array))
+    return(hash_for(args)) if args.is_a?(Hash)
     hash_for(args.last.is_a?(Hash) ? args.pop : {})
   end
 end

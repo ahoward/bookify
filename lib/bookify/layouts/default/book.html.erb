@@ -3,19 +3,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="<%= @style %>" />
   </head>
 
   <body>
 
     <% chapters.each do |chapter| %>
-      <div class="chapter" id="chapter-<%= chapter.index %>">
-
-        <% chapter.sections.each do |section| %>
-          <%= render :section => section %>
-        <% end %>
-
-      </div>
+      <%= render :chapter => chapter %>
     <% end %>
 
   </body>

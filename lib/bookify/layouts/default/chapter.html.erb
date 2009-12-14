@@ -1,0 +1,5 @@
+<div class="chapter" id="chapter-<%= chapter.index %>">
+  <% chapter.sections.each do |section| %>
+    <%= render :section => section %>
+  <% end %>
+</div>

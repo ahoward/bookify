@@ -1,3 +1,15 @@
 <div class="section post" id="chapter-<%= chapter.index %>_section-<%= section.index %>">
-post
+  <h2 class='title'><%= section.title %></h2>
+
+  <% unless section.dates.empty? -%>
+    <div class="dates">
+      <%= sections.dates.join(' &mdash; ') %>
+    </div>
+  <% end -%>
+
+  <div class='content'>
+    <%=
+      c(section.content)
+    %>
+  </div>
 </div>

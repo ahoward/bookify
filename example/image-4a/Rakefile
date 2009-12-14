@@ -1,0 +1,21 @@
+task :default do
+  Rake::Task['index.pdf'].invoke()
+end
+
+file 'index.html' do
+end
+
+file 'index.pdf' => %w( index.html ) do
+  sh 'prince index.html -o index.pdf'
+end
+
+task 'preview' do
+  a = b = nil
+  loop do
+    system 'rake'
+    b = File.stat('index.pdf') rescue Time.at(0)
+    system 'open index.pdf' if(a.nil? or b > a) 
+    a = b
+    sleep(1)
+  end
+end

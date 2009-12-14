@@ -1,0 +1,34 @@
+<%
+  images = section.images
+  size = images.size
+  split = section.split =~ /^h/i ? :horizontal : :vertical
+%>
+
+<div class="section image image-<%= size %>" id="chapter-<%= chapter.index %>_section-<%= section.index %>">
+
+  <% if split == :horizontal %>
+
+    <table>
+      <% section.images.each do |href| %>
+        <tr>
+          <td>
+            <img src="<%= href %>" alt="<%= href %>" />
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+  <% else %>
+
+    <table>
+      <tr>
+        <% section.images.each do |href| %>
+          <td>
+            <img src="<%= href %>" alt="<%= href %>" />
+          </td>
+        <% end %>
+      </tr>
+    </table>
+
+  <% end %>
+</div>

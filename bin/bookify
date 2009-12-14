@@ -1,7 +1,10 @@
 #! /usr/bin/env ruby
 
 Main {
-  argument('config')
+  option('--config', '-c'){
+    argument :required
+    default{ argv.shift }
+  }
 
   option('--output', '-o'){
     argument :required
@@ -13,27 +16,30 @@ Main {
     default 'pdf'
   }
 
-  def run
-    @config = param['config'].value
-    @output = param['output'].value
-    @format = param['format'].value
+  mode(:config){
+    def run
+      y Bookify::Fake.config
+    end    
+  }
+  
+  mode(:book){
+    def run
+      @config = param['config'].value || 'bookify.yml'
+      abort('no config') unless test(?e, @config)
 
-    case @format
-      when /pdf/
-        msg = :to_pdf
-        output = @output ? @output : 'book.pdf'
-      when /html/
-        msg = :to_html
-        output = @output ? @output : 'book.html'
+      @output = param['output'].value
+      @format = param['format'].value
+      
+
+      msg = "to_#{ @format }"
+
+      book = Bookify::Book.new(:config => @config)
+      formatted = book.send(msg)
+      output = @output || "book.#{ @format }"
+      open(output){|fd| fd.write(formatted)}
     end
-
-    msg = "to_#{ @format }"
-    out = @output ? @output : "book.#{ @format }"
-
-    book = Bookify::Book.new(@config)
-    fmt = book.send(msg)
-    open(out){|fd| fd.write(fmt)}
-  end
+  }
+  
 
   def open(io)
     case io

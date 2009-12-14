@@ -1,0 +1,21 @@
+<%
+  images = section.images
+  size = images.size
+  split = section.split =~ /^h/i ? :horizontal : :vertical
+%>
+
+<div class="section image image-<%= size %>" id="chapter-<%= chapter.index %>_section-<%= section.index %>">
+
+  <table style='width:100%;height:100%;'>
+
+    <% section.images.each do |href| %>
+      <tr>
+        <td valign='center' align='center'>
+          <img style='width:30%' src="<%= href %>" alt="<%= href %>" />
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+
+</div>
